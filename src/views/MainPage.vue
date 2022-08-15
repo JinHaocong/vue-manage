@@ -1,7 +1,7 @@
 <!--
  * @Author: Jin Haocong
  * @Date: 2022-08-15 09:47:17
- * @LastEditTime: 2022-08-15 15:00:15
+ * @LastEditTime: 2022-08-15 23:04:03
 -->
 <template>
   <el-container style="height: 100%">
@@ -13,6 +13,7 @@
         <common-header></common-header>
       </el-header>
       <el-main>
+        <common-tag></common-tag>
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -21,10 +22,12 @@
 <script>
 import CommonAside from "@/components/CommonAside.vue";
 import CommonHeader from "@/components/CommonHeader.vue";
+import CommonTag from "@/components/CommonTag.vue";
 export default {
   components: {
     CommonAside,
     CommonHeader,
+    CommonTag,
   },
   name: "MainPage",
   data() {

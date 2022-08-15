@@ -1,7 +1,7 @@
 <!--
  * @Author: Jin Haocong
  * @Date: 2022-08-15 10:53:50
- * @LastEditTime: 2022-08-15 14:49:29
+ * @LastEditTime: 2022-08-15 22:29:10
 -->
 <template>
   <div class="asidecontainer">
@@ -28,8 +28,11 @@
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{ item.label }}</span>
         </template>
+        <!-- 二级菜单 -->
         <el-menu-item-group v-for="item in item.children" :key="item.path">
-          <el-menu-item :index="item.path">{{ item.label }}</el-menu-item>
+          <el-menu-item :index="item.path" @click="clickMenu(item)">{{
+            item.label
+          }}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -74,14 +77,14 @@ export default {
           children: [
             {
               path: "/page1",
-              name: "ElsePage1",
+              name: "OtherPage1",
               label: "页面1",
               icon: "setting",
               url: "Other/PageOne",
             },
             {
               path: "/page2",
-              name: "ElsePage2",
+              name: "OtherPage2",
               label: "页面2",
               icon: "setting",
               url: "Other/PageTwo",
@@ -107,10 +110,10 @@ export default {
   },
   methods: {
     clickMenu(item) {
-      console.log(item.name);
       this.$router.push({
         name: item.name,
       });
+      this.$store.commit("selectMenu", item);
     },
   },
 };

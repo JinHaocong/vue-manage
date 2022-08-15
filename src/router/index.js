@@ -1,7 +1,7 @@
 /*
  * @Author: Jin Haocong
  * @Date: 2022-08-15 09:44:38
- * @LastEditTime: 2022-08-15 13:56:12
+ * @LastEditTime: 2022-08-15 21:37:55
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -35,7 +35,17 @@ const routes = [
                 path: '/mall',
                 name: 'MallPage',
                 component: () => import('@/views/mall/MallPage')
-            }
+            },
+            {
+                path: '/page1',
+                name: "OtherPage1",
+                component: () => import('@/views/other/OtherPage1')
+            },
+            {
+                path: '/page2',
+                name: "OtherPage2",
+                component: () => import('@/views/other/OtherPage2')
+            },
         ]
     },
 ]

@@ -1,7 +1,7 @@
 <!--
  * @Author: Jin Haocong
  * @Date: 2022-08-15 19:24:15
- * @LastEditTime: 2022-08-15 21:06:54
+ * @LastEditTime: 2022-08-15 21:53:36
 -->
 <template>
   <div ref="echart"></div>
@@ -70,7 +70,7 @@ export default {
           },
         },
         grid: {
-          left: "20%",
+          left: "10%",
         },
         // 提示框
         tooltip: {
